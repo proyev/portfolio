@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+	<!-- To do:
+	 1) Dynamic resize, depending on the viewport size of the whole thing
+	 2) Resize of the bubble sizes and other elements
+	 3) Set minimal window sizes to avoid collapses
+	 4) Create launch page and work on light animation
+	 5) Slow but steady work on script--->
+	<head>
+		<title>Cipher Bot</title>
+		<meta charset='utf-8'/>
+		<meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=yes'/>
+		<link href='src/style.css' rel='stylesheet'/>
+	</head>
+	<body>
+		<main id='main'>
+			<!-- Launch instructions -->
+			<div class='phrase question-bubble'>
+				<div class='person'>
+					<span>Bot</span>
+				</div>
+					<p>Hello, I'm a ciphering bot. I can use one of three ciphers to encrypt your message: caesar, symbol, reverse</p>
+			</div>
+			<div class='phrase question-bubble'>
+				<div class='person'>
+					<span>Bot</span>
+				</div>
+				<p>You can encrypt your message by typing 'type of cipher' followed by ':' and your message. In that order please, my creator made me kinda stupid</p>
+			</div>
+			<div class='phrase question-bubble'>
+				<div class='person'>
+					<span>Bot</span>
+				</div>
+				<p>For example: "ceaser: some message", and I will return your message ciphered using caesar cipher</p>
+			</div>
+			<div class='phrase question-bubble'>
+				<div class='person'>
+					<span>Bot</span>
+				</div>
+				<p>It doesn't matter, whether your message is written in upper or lower case</p>
+			</div>
+			<div class='phrase question-bubble'>
+				<div class='person'>
+					<span>Bot</span>
+				</div>
+				<p>If you want to know, what each cipher does, simply type whatis(type of cypher)</p>
+			</div>
+		</main>
+		<!-- Chat fields -->
+		<footer id='footer'>
+			<form id='response-form'>
+				<textarea id='answer-field' name='answer-field'
+						  placeholder="Type your message here and press 'Enter'"
+						  autofocus required></textarea>
+				<div id='send-icon'></div>
+			</form>
+		</footer>
+		<!-- Add jQuery -->
+		<script src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js'></script>
+		<!-- Add logic -->
+		<script src='src/logic.js'></script>
+	</body>
+</html>
