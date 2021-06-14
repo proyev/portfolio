@@ -1,63 +1,113 @@
 <!DOCTYPE html>
+
+<!-- check the semantics -->
 <html lang="en">
-	<!-- To do:
-	 1) Dynamic resize, depending on the viewport size of the whole thing
-	 2) Resize of the bubble sizes and other elements
-	 3) Set minimal window sizes to avoid collapses
-	 4) Create launch page and work on light animation
-	 5) Slow but steady work on script--->
-	<head>
-		<title>Cipher Bot</title>
-		<meta charset='utf-8'/>
-		<meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=yes'/>
-		<link href='src/style.css' rel='stylesheet'/>
-	</head>
-	<body>
-		<main id='main'>
-			<!-- Launch instructions -->
-			<div class='phrase question-bubble'>
-				<div class='person'>
-					<span>Bot</span>
-				</div>
-					<p>Hello, I'm a ciphering bot. I can use one of three ciphers to encrypt your message: caesar, symbol, reverse</p>
-			</div>
-			<div class='phrase question-bubble'>
-				<div class='person'>
-					<span>Bot</span>
-				</div>
-				<p>You can encrypt your message by typing 'type of cipher' followed by ':' and your message. In that order please, my creator made me kinda stupid</p>
-			</div>
-			<div class='phrase question-bubble'>
-				<div class='person'>
-					<span>Bot</span>
-				</div>
-				<p>For example: "ceaser: some message", and I will return your message ciphered using caesar cipher</p>
-			</div>
-			<div class='phrase question-bubble'>
-				<div class='person'>
-					<span>Bot</span>
-				</div>
-				<p>It doesn't matter, whether your message is written in upper or lower case</p>
-			</div>
-			<div class='phrase question-bubble'>
-				<div class='person'>
-					<span>Bot</span>
-				</div>
-				<p>If you want to know, what each cipher does, simply type whatis(type of cypher)</p>
-			</div>
-		</main>
-		<!-- Chat fields -->
-		<footer id='footer'>
-			<form id='response-form'>
-				<textarea id='answer-field' name='answer-field'
-						  placeholder="Type your message here and press 'Enter'"
-						  autofocus required></textarea>
-				<div id='send-icon'></div>
-			</form>
-		</footer>
-		<!-- Add jQuery -->
-		<script src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js'></script>
-		<!-- Add logic -->
-		<script src='src/logic.js'></script>
-	</body>
+<head>
+    <meta charset="utf-8">
+    <title>Hello, World!</title>
+    <link href="style.css" rel="stylesheet"/>
+</head>
+<body>
+    <section class="window">
+        <h1>
+
+        </h1>
+        <p>
+
+        </p>
+        <!-- Full-size html will go side-by-side -->
+        <button id="close">Close</button>
+    </section>
+    <!-- do basics before and make some plans
+    fulfill this as part of Figma/Bootstrap tutorial as well, as this might be very cool
+        even if you gonna need to spend some time in After Effect  - better do this, talk to
+        Kamchatka, and mention him on the personal page
+    -->
+    <header>
+<!--        Small nav bar, I guess-->
+        <h1>Subject's profile, with animation as much as possible, quite possible the writing
+            on top of the folder 'file'</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">about me</a></li>
+                <li><a href="#portfolio">portfolio</a></li>
+                <li><a href="#contacts">contact</a></li>
+            </ul>
+        </nav>
+        <div class="hamburger">
+            <i class="fas fa-bars" id="menu-icon"></i>
+            <div class="list" id="menu">
+                <i class="fas fa-times" id="menu-close"></i>
+                <p>Home</p>
+                <p>About</p>
+                <p>Portfolio</p>
+                <p>Contact</p>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section>
+            <!-- there was h1 here... -->
+            <!-- Here make a single page: big photo, birthplace, languages, tech skills and so on with links
+             to the parts in the 'file' with animated movement there
+             Other pages -experiences - add a story with references on my bachelor page
+                         -projects - here making blueprints and giving links and so on, of COURSE talk about game
+                         -interests and hobbies
+                         -->
+        </section>
+        <section id="about">
+            <h2>About me</h2>
+            <article>
+                <section>
+                    <p>Something about me, hmm, let's see</p>
+                </section>
+            </article>
+            <img src="https://i.pinimg.com/474x/eb/7d/54/eb7d5475e9443e274dbe3b3906d0525c.jpg" alt="Some CV"/>
+        </section>
+        <section id="portfolio">
+            <h2>Portfolio</h2>
+            <section class="flashcards">
+                <button name="flashcards" class="open-window">Open the project</button>
+                <figure>
+<!--                    <img src="flashcrads_screenshot.png" alt="Flashcards project"/>-->
+                    <figcaption>Flashcards - well - display the html page itself, fully functioning</figcaption>
+                </figure>
+            </section>
+            <figure>
+                <img src="data:image/jpeg;base64,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" alt="Some project"/>
+                <figcaption>Some project picture</figcaption>
+            </figure>
+        </section>
+        <section id="contacts">
+            <p>Social</p>
+            <address>Some contact info</address>
+        </section>
+
+        <!-- Of course add id's, names and max attributes to make it professional and user-friendly -->
+        <section>
+            <h2>Subject's personal Data</h2>
+        </section>
+        <section>
+            <h2>Experiences</h2>
+        </section>
+        <section>
+            <h2>Projects</h2>
+            <article>
+                <h3>### Robots ###</h3>
+                <section>
+                </section>
+            </article>
+            <article>
+                <h3>### Interests and hobbies</h3>
+                <section>
+                    <h4>Fitness smth</h4>
+                </section>
+            </article>
+        </section>
+    </main>
+
+    <footer>Contact me like dis</footer>
+    <script src="pop-up.js"></script>
+    <script src="https://kit.fontawesome.com/f96d58b5c2.js" crossorigin="anonymous"></script>
+</body>
 </html>
